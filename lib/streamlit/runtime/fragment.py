@@ -158,6 +158,7 @@ def _fragment(
 
             try:
                 with st.container():
+                    ctx.current_fragment_delta_path = active_dg._cursor.delta_path
                     result = non_optional_func(*args, **kwargs)
             finally:
                 ctx.current_fragment_id = None
